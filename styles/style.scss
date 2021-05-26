@@ -1,11 +1,3 @@
-/*-- LAYOUT --*/
-
-* {
-    margin: 0; padding: 0;
-    box-sizing: border-box;
-    font-family: Roboto, sans-serif;
-}
-
 /*-- VARIABLES --*/
 
 $primary-color: #9356DC;
@@ -14,15 +6,16 @@ $tertiary-color: #99E2D0;
 $font-gray: #777777;
 $font-white: rgb(238, 238, 238);
 $font-black: #1e272e;
-$background-gray: #9a9a9a2a;
+$background-gray: #f0f0f0;
 
 /*-- MIXINS --*/
 
-@mixin flex ($flexdirection: row, $justify-content: center) {
+@mixin flex ($flexdirection: row, $justify-content: center, $align-items: center, $flex-wrap: nowrap) {
     display: flex; 
     flex-direction: $flexdirection;
     justify-content: $justify-content;
-    align-items: center;
+    align-items: $align-items;
+    flex-wrap: $flex-wrap;
 }
 
 /*-- MAPS --*/
@@ -39,24 +32,32 @@ $font-weight: (
     bold: 700
 );
 
+$box-shadow: (
+    normal: 2px 3px 9px 1px rgba(128, 128, 128, 0.26),
+    hover: 2px 3px 9px 1px rgba(128, 128, 128, 0.623)
+);
+
 /*-- GENERAL --*/
+
+* {
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+    color: $font-black;
+}
 
 body { background-color: #fff; }
 
-h1,
-h2 {
-    font-size: map-get($font-size, large);
-    color: $font-black;
-}
+h1, h2, h3 { font-size: map-get($font-size, large); }
 
 /*-- HEADER --*/
 
 .heading {
     width: 100%; height: fit-content;
+    position: relative; z-index: 1;
     font-family: Shrikhand, cursive;
     display: flex; justify-content: center;
-    color: $font-black;
-    box-shadow: 1px 1px 6px rgba(128, 128, 128, 0.397);
+    box-shadow: 2px 3px 3px rgba(128, 128, 128, 0.171);
 
     &__img { 
         width: 45%; 
@@ -69,7 +70,7 @@ h2 {
 /*-- SECTION LOCALISATION --*/
 
 .localisation {
-    color: $font-black; background-color: $background-gray;
+    background-color: $background-gray;
     width: 100%; height: 2.2rem;
     padding: 1.5rem;
     @include flex();
@@ -105,12 +106,12 @@ h2 {
     padding: 0.9rem 1.3rem; margin: 0.7rem 0;
     color: $font-white; background-image: linear-gradient(to bottom right, $secondary-color, $primary-color);
     border: none; border-radius: 1.7rem;
-    box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.397);
+    box-shadow: map-get($box-shadow, normal);
 
     &:hover,
     &:focus {
+        box-shadow: map-get($box-shadow, hover);
         opacity: 0.9;
-        box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.623);
         transition: 0.2s ease-in;
     }
 }
@@ -118,8 +119,64 @@ h2 {
 /*-- SECTION FONCTIONNEMENT --*/
 
 .fonctionnement {
+    width: 100%; 
+    padding: 1.5rem 1.2rem; 
+
     h2 {
-        height: 10rem;
+        margin: 0.8rem 0;
+    }
+
+    &__container {
+        padding: 1rem 0;
+        width: 100%; height: fit-content;
+        @include flex(row, space-around, center, wrap)
+    }
+
+    &__carte {
+        width: 96%; max-width: 20rem;
+        padding: 1.6rem 0; margin-bottom: 1.6rem;
+        position: relative;
+        @include flex(row, flex-start, center);
+        background-color: lighten($background-gray, 2%);
+        border-radius: 20px;
+        box-shadow: map-get($box-shadow, normal);
+
+        i {
+            width: 15px;
+            padding: 0 2.5rem;
+            color: $font-gray;
+        }
+
+        span {
+            position: absolute;
+            padding: 0.3rem 0.5rem;
+            font-size: 0.8rem;
+            border-radius: 1rem;
+            color: $font-white; background-color: $primary-color;
+            transform: translate(-50%);
+            
+        }
+
+        &--highlighted {
+            background-color: lighten($primary-color, 35%);
+
+            i { 
+                color: $primary-color;
+            }
+        }
+
+        &:hover {
+            box-shadow: map-get($box-shadow, hover);
+            transition: 0.2s ease-in;
+        }
+    }
+}
+
+.restaurants {
+    h3 {
+        height: 20rem;
+        padding: 2rem 1.3em;
+        background-color: $background-gray;
     }
 }
 
@@ -128,12 +185,17 @@ h2 {
 .footer {
     padding: 0 1.4rem 1.7rem;
     font-weight: 300;
-    color: $font-white; background-color: rgb(54, 54, 54);
+    background-color: rgb(54, 54, 54);
 
     &__heading { 
         font-family: Shrikhand, cursive;
         font-size: map-get($font-size, medium);
         padding: 1.4rem 0 0.9rem;
+        color: $font-white;
+    }
+
+    p {
+        color: $font-white;
     }
 
     &__element {
@@ -142,6 +204,7 @@ h2 {
         width: fit-content; height: 1.4rem;
 
         & i {
+            color: $font-white;
             width: 13px;
             margin-right: 0.5rem;
         }

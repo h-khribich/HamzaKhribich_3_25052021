@@ -1,24 +1,22 @@
-/*-- LAYOUT --*/
+/*-- VARIABLES --*/
+/*-- MIXINS --*/
+/*-- MAPS --*/
+/*-- GENERAL --*/
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: Roboto, sans-serif;
+  color: #1e272e;
 }
 
-/*-- VARIABLES --*/
-/*-- MIXINS --*/
-/*-- MAPS --*/
-/*-- GENERAL --*/
 body {
   background-color: #fff;
 }
 
-h1,
-h2 {
+h1, h2, h3 {
   font-size: 1.5rem;
-  color: #1e272e;
 }
 
 /*-- HEADER --*/
@@ -27,6 +25,8 @@ h2 {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  position: relative;
+  z-index: 1;
   font-family: Shrikhand, cursive;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -34,9 +34,8 @@ h2 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  color: #1e272e;
-  -webkit-box-shadow: 1px 1px 6px rgba(128, 128, 128, 0.397);
-          box-shadow: 1px 1px 6px rgba(128, 128, 128, 0.397);
+  -webkit-box-shadow: 2px 3px 3px rgba(128, 128, 128, 0.171);
+          box-shadow: 2px 3px 3px rgba(128, 128, 128, 0.171);
 }
 
 .heading__img {
@@ -49,8 +48,7 @@ h2 {
 
 /*-- SECTION LOCALISATION --*/
 .localisation {
-  color: #1e272e;
-  background-color: #9a9a9a2a;
+  background-color: #f0f0f0;
   width: 100%;
   height: 2.2rem;
   padding: 1.5rem;
@@ -67,6 +65,8 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
 
 .localisation__para {
@@ -92,6 +92,8 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
 
 .explorez__para {
@@ -114,28 +116,119 @@ h2 {
   background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
   border: none;
   border-radius: 1.7rem;
-  -webkit-box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.397);
-          box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.397);
+  -webkit-box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.26);
+          box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.26);
 }
 
 .btn:hover, .btn:focus {
+  -webkit-box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.623);
+          box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.623);
   opacity: 0.9;
+  -webkit-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+}
+
+/*-- SECTION FONCTIONNEMENT --*/
+.fonctionnement {
+  width: 100%;
+  padding: 1.5rem 1.2rem;
+}
+
+.fonctionnement h2 {
+  margin: 0.8rem 0;
+}
+
+.fonctionnement__container {
+  padding: 1rem 0;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.fonctionnement__carte {
+  width: 96%;
+  max-width: 20rem;
+  padding: 1.6rem 0;
+  margin-bottom: 1.6rem;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  background-color: whitesmoke;
+  border-radius: 20px;
+  -webkit-box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.26);
+          box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.26);
+}
+
+.fonctionnement__carte i {
+  width: 15px;
+  padding: 0 2.5rem;
+  color: #777777;
+}
+
+.fonctionnement__carte span {
+  position: absolute;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.8rem;
+  border-radius: 1rem;
+  color: #eeeeee;
+  background-color: #9356DC;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+}
+
+.fonctionnement__carte--highlighted {
+  background-color: #f2eafb;
+}
+
+.fonctionnement__carte--highlighted i {
+  color: #9356DC;
+}
+
+.fonctionnement__carte:hover {
   -webkit-box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.623);
           box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.623);
   -webkit-transition: 0.2s ease-in;
   transition: 0.2s ease-in;
 }
 
-/*-- SECTION FONCTIONNEMENT --*/
-.fonctionnement h2 {
-  height: 10rem;
+.restaurants h3 {
+  height: 20rem;
+  padding: 2rem 1.3em;
+  background-color: #f0f0f0;
 }
 
 /*-- FOOTER --*/
 .footer {
   padding: 0 1.4rem 1.7rem;
   font-weight: 300;
-  color: #eeeeee;
   background-color: #363636;
 }
 
@@ -143,6 +236,11 @@ h2 {
   font-family: Shrikhand, cursive;
   font-size: 1.1rem;
   padding: 1.4rem 0 0.9rem;
+  color: #eeeeee;
+}
+
+.footer p {
+  color: #eeeeee;
 }
 
 .footer__element {
@@ -159,6 +257,8 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   margin-bottom: 0.2rem;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -167,6 +267,7 @@ h2 {
 }
 
 .footer__element i {
+  color: #eeeeee;
   width: 13px;
   margin-right: 0.5rem;
 }
