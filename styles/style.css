@@ -109,7 +109,7 @@ h2 {
   font-size: 1rem;
   padding: 0.9rem 1.3rem;
   margin: 0.7rem 0;
-  color: #e4e4e4;
+  color: #eeeeee;
   background-image: -webkit-gradient(linear, left top, right bottom, from(#FF79DA), to(#9356DC));
   background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
   border: none;
@@ -133,20 +133,68 @@ h2 {
 
 /*-- FOOTER --*/
 .footer {
-  padding: 0 1.4rem;
-  font-weight: 400;
-  height: 20rem;
-  color: #e4e4e4;
+  padding: 0 1.4rem 1.7rem;
+  font-weight: 300;
+  color: #eeeeee;
   background-color: #363636;
 }
 
 .footer__heading {
   font-family: Shrikhand, cursive;
   font-size: 1.1rem;
-  padding: 1.3rem 0;
+  padding: 1.4rem 0 0.9rem;
 }
 
 .footer__element {
-  padding-bottom: 0.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 0.2rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 1.4rem;
+}
+
+.footer__element i {
+  width: 13px;
+  margin-right: 0.5rem;
+}
+
+.footer__element .icon--utensils {
+  padding-left: 2px;
+  padding-top: 1px;
+}
+
+.footer__element .icon--hands {
+  -webkit-transform: scale(0.8, 1);
+          transform: scale(0.8, 1);
+}
+
+.footer__element a {
+  color: #eeeeee;
+  text-decoration: none;
+}
+
+.footer__element--bold {
+  font-weight: 400;
+}
+
+.footer__element:hover {
+  font-size: 1.1rem;
+  -webkit-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+  text-shadow: 3px 4px 4px #1e272e;
 }
 /*# sourceMappingURL=style.css.map */

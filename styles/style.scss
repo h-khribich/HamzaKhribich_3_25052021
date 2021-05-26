@@ -12,7 +12,7 @@ $primary-color: #9356DC;
 $secondary-color: #FF79DA;
 $tertiary-color: #99E2D0;
 $font-gray: #777777;
-$font-white: rgb(228, 228, 228);
+$font-white: rgb(238, 238, 238);
 $font-black: #1e272e;
 $background-gray: #9a9a9a2a;
 
@@ -126,21 +126,45 @@ h2 {
 /*-- FOOTER --*/
 
 .footer {
-    padding: 0 1.4rem;
-    font-weight: 400;
-    height: 20rem;
+    padding: 0 1.4rem 1.7rem;
+    font-weight: 300;
     color: $font-white; background-color: rgb(54, 54, 54);
 
     &__heading { 
         font-family: Shrikhand, cursive;
         font-size: map-get($font-size, medium);
-        padding: 1.3rem 0;
+        padding: 1.4rem 0 0.9rem;
     }
 
     &__element {
-        padding-bottom: 0.4rem;
-        &--bold {
-            
+        @include flex(row, start);
+        margin-bottom: 0.2rem;
+        width: fit-content; height: 1.4rem;
+
+        & i {
+            width: 13px;
+            margin-right: 0.5rem;
+        }
+
+        .icon--utensils {
+            padding-left: 2px;
+            padding-top: 1px;
+        }
+
+        .icon--hands { transform: scale(0.8, 1); }
+
+        a {
+            color: $font-white;
+            text-decoration: none;
+        }
+
+        &--bold { font-weight: 400; }
+
+        &:hover {
+            font-size: 1.1rem;
+            transition: 0.2s ease-in;
+            cursor: pointer;
+            text-shadow: 3px 4px 4px $font-black;
         }
     }
 }
