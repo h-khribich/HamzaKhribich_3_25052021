@@ -19,6 +19,10 @@ h1, h2, h3 {
   font-size: 1.5rem;
 }
 
+a {
+  text-decoration: none;
+}
+
 /*-- HEADER --*/
 .heading {
   width: 100%;
@@ -99,7 +103,7 @@ h1, h2, h3 {
 .explorez__para {
   font-size: 1.1rem;
   font-weight: 300;
-  color: #777777;
+  color: #555555;
 }
 
 .explorez h1 {
@@ -120,6 +124,10 @@ h1, h2, h3 {
           box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.26);
 }
 
+.btn a {
+  color: #eeeeee;
+}
+
 .btn:hover, .btn:focus {
   -webkit-box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.623);
           box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.623);
@@ -131,11 +139,11 @@ h1, h2, h3 {
 /*-- SECTION FONCTIONNEMENT --*/
 .fonctionnement {
   width: 100%;
-  padding: 1.5rem 1.2rem;
+  padding: 1.8rem 1.2rem;
 }
 
 .fonctionnement h2 {
-  margin: 0.8rem 0;
+  margin: 1rem 0;
 }
 
 .fonctionnement__container {
@@ -190,7 +198,7 @@ h1, h2, h3 {
 .fonctionnement__carte i {
   width: 15px;
   padding: 0 2.5rem;
-  color: #777777;
+  color: #555555;
 }
 
 .fonctionnement__carte span {
@@ -219,10 +227,87 @@ h1, h2, h3 {
   transition: 0.2s ease-in;
 }
 
-.restaurants h3 {
-  height: 20rem;
-  padding: 2rem 1.3em;
+/*-- SECTION RESTAURANTS --*/
+.restaurants {
+  width: 100%;
+  padding: 1.8rem 1.2rem;
   background-color: #f0f0f0;
+}
+
+.restaurants h3 {
+  margin: 1rem 0;
+}
+
+.restaurants-container {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.restaurants-carte {
+  width: 100%;
+  margin: 0.5rem 0;
+  position: relative;
+  overflow: hidden;
+  background-color: #fff;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  -webkit-box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.26);
+          box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.26);
+}
+
+.restaurants-carte__nouveau {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 13px;
+  padding: 0.5rem 0.8rem;
+  background-color: #99E2D0;
+  color: #278870;
+  -webkit-transform: translate(-15%, 40%);
+          transform: translate(-15%, 40%);
+  border-radius: 2px;
+}
+
+.restaurants-carte__img {
+  width: 100%;
+  height: 11rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.restaurants-carte__description {
+  display: inline-block;
+  padding: 0.6rem 0.8rem;
+  line-height: 1.5rem;
+}
+
+.restaurants-carte__heading {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.restaurants-carte__element {
+  font-weight: 300;
+  color: #555555;
 }
 
 /*-- FOOTER --*/
