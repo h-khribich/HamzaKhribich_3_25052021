@@ -16,14 +16,18 @@ $background-gray: #f0f0f0;
     justify-content: $justify-content;
     align-items: $align-items;
     flex-wrap: $flex-wrap;
-}
+};
 
 @mixin carte-radius {
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
-}
+};
+
+@mixin transition {
+    transition: 0.2s ease-in;
+};
 
 /*-- MAPS --*/
 
@@ -121,9 +125,9 @@ a { text-decoration: none; }
 
     &:hover,
     &:focus {
+        @include transition();
         box-shadow: map-get($box-shadow, hover);
         opacity: 0.9;
-        transition: 0.2s ease-in;
     }
 }
 
@@ -143,7 +147,8 @@ a { text-decoration: none; }
 
     &__carte {
         width: 96%; max-width: 20rem;
-        padding: 1.6rem 0; margin-bottom: 1.6rem;
+        padding: 1.6rem 0; 
+        margin-bottom: 1.6rem;
         position: relative;
         @include flex(row, flex-start, center);
         background-color: lighten($background-gray, 2%);
@@ -173,8 +178,9 @@ a { text-decoration: none; }
         }
 
         &:hover {
+            @include transition();
+            transform: scale(1.01);
             box-shadow: map-get($box-shadow, hover);
-            transition: 0.2s ease-in;
         }
     }
 }
@@ -183,19 +189,19 @@ a { text-decoration: none; }
 
 .restaurants {
     width: 100%; 
-    padding: 1.8rem 1.2rem;
+    padding: 2rem 1.2rem 3.5rem;
     background-color: $background-gray;
 
-    h3 { margin: 1rem 0; }
+    h3 { margin: 0.8rem 0; }
 
     &-container {
         width: 100%; height: fit-content;
-        @include flex(row, space-between, center, wrap);
+        @include flex(row, space-around, center, wrap);
     }
 
     &-carte {
-        width: 100%;
-        margin: 0.5rem 0;
+        width: 100%; max-width: 450px;
+        margin: 0.6rem 0;
         position: relative;
         overflow: hidden;
         background-color: #fff;
@@ -206,7 +212,7 @@ a { text-decoration: none; }
             position: absolute;
             top: 0; right: 0;
             font-size: 13px;
-            padding: 0.5rem 0.8rem;
+            padding: 0.4rem 0.8rem;
             background-color: $tertiary-color;
             color: darken($tertiary-color, 40%);
             transform: translate( -15%, 40%);
@@ -233,6 +239,12 @@ a { text-decoration: none; }
         &__element {
             font-weight: map-get($font-weight, light);
             color: $font-gray;
+        }
+
+        &:hover {
+            @include transition();
+            transform: scale(1.01);
+            box-shadow: map-get($box-shadow, hover);
         }
     }
 }
@@ -279,10 +291,31 @@ a { text-decoration: none; }
         &--bold { font-weight: 400; }
 
         &:hover {
-            font-size: 1.1rem;
-            transition: 0.2s ease-in;
+            @include transition();
+            transform: scale(1.05);
             cursor: pointer;
             text-shadow: 3px 4px 4px $font-black;
         }
     }
 }
+
+/*-- MEDIAS QUERIES --*/
+
+@media screen and (min-width: 943px) {
+    .restaurants-carte { margin: 0; }
+    .restaurants-container { gap: 2rem; }
+}
+
+@media screen and (min-width: 767px) {
+    .footer__wrapper {
+        margin: 0 auto;
+        max-width: 1040px;
+    }
+
+    .footer__container {
+        padding: 0.5rem 0 1rem;
+        margin: 0 auto;
+        @include flex(row, space-around, center);
+    }
+}
+
