@@ -53,7 +53,7 @@ a {
 .heading__return-home {
   position: absolute;
   top: 40%;
-  left: 12%;
+  left: 8%;
 }
 
 /*-- SECTION LOCALISATION --*/
@@ -153,11 +153,12 @@ a {
 }
 
 .fonctionnement__container {
-  padding: 1rem 0;
+  padding: 1rem 0 2.5rem;
   width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  gap: 1.6rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -178,7 +179,6 @@ a {
   width: 96%;
   max-width: 20rem;
   padding: 1.6rem 0;
-  margin-bottom: 1.6rem;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -233,6 +233,44 @@ a {
           transform: scale(1.01);
   -webkit-box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.623);
           box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.623);
+}
+
+/*- COMPONENT HEART -*/
+.heart {
+  -webkit-text-stroke: 1px #555555;
+  background: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 0.3rem;
+}
+
+.heart:hover {
+  cursor: pointer;
+  -webkit-text-stroke: 1px transparent;
+  background: -webkit-linear-gradient(250deg, #9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: remplissage 0.5s ease-in-out;
+          animation: remplissage 0.5s ease-in-out;
+  /*- Effet remplissage -*/
+}
+
+@-webkit-keyframes remplissage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes remplissage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /*-- SECTION RESTAURANTS --*/
@@ -313,21 +351,8 @@ a {
   position: absolute;
   top: 0;
   right: 0;
-  padding: 0.3rem;
   -webkit-transform: translate(-50%, 70%);
           transform: translate(-50%, 70%);
-  -webkit-text-stroke: 1px #555555;
-  color: transparent;
-}
-
-.restaurants-carte__description .heart:hover {
-  cursor: pointer;
-  -webkit-text-stroke: 1px transparent;
-  background: -webkit-linear-gradient(250deg, #9356DC, #FF79DA);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-transition: 0.2s ease-in;
-  transition: 0.2s ease-in;
 }
 
 .restaurants-carte__heading {
@@ -347,6 +372,68 @@ a {
           transform: scale(1.01);
   -webkit-box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.623);
           box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.623);
+}
+
+/*-- PAGES MENU --*/
+.resto {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.resto__img {
+  width: 100%;
+  height: 17rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.menu {
+  width: 100%;
+}
+
+.menu__wrapper {
+  width: 100%;
+  -webkit-transform: translate(0, -40%);
+          transform: translate(0, -40%);
+  background-color: #f0f0f0;
+  border-top-right-radius: 40px;
+  border-top-left-radius: 40px;
+}
+
+.menu__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  padding: 2rem;
+}
+
+.menu__header .heading {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.menu .btn {
+  display: block;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  margin: 0 auto;
 }
 
 /*-- FOOTER --*/
