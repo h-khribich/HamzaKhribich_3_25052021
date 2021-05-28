@@ -78,6 +78,11 @@ a { text-decoration: none; }
         margin: 1.4rem 0 0.8rem;
         opacity: 95%;
     }
+
+    &__return-home {
+        position: absolute;
+        top: 40%; left: 12%;
+    }
 }
 
 /*-- SECTION LOCALISATION --*/
@@ -203,7 +208,7 @@ a { text-decoration: none; }
         width: 100%; max-width: 450px;
         margin: 0.6rem 0;
         position: relative;
-        overflow: hidden;
+        overflow: hidden; text-overflow: ellipsis;
         background-color: #fff;
         @include carte-radius();
         box-shadow: map-get($box-shadow, normal);
@@ -226,9 +231,27 @@ a { text-decoration: none; }
         }
 
         &__description {
-            display: inline-block;
+            position: relative;
             padding: 0.6rem 0.8rem;
             line-height: 1.5rem;
+
+            .heart {
+                position: absolute;
+                top: 0; right: 0;
+                padding: 0.3rem;
+                transform: translate(-50%, 70%);
+                -webkit-text-stroke: 1px $font-gray;
+                color: transparent;
+
+                &:hover {
+                    cursor: pointer;
+                    -webkit-text-stroke: 1px transparent;
+                    background: -webkit-linear-gradient(250deg, $primary-color, $secondary-color);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    @include transition();
+                }
+            }
         }
 
         &__heading {

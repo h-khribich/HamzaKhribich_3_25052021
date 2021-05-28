@@ -50,6 +50,12 @@ a {
   opacity: 95%;
 }
 
+.heading__return-home {
+  position: absolute;
+  top: 40%;
+  left: 12%;
+}
+
 /*-- SECTION LOCALISATION --*/
 .localisation {
   background-color: #f0f0f0;
@@ -267,6 +273,7 @@ a {
   margin: 0.6rem 0;
   position: relative;
   overflow: hidden;
+  text-overflow: ellipsis;
   background-color: #fff;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
@@ -297,9 +304,30 @@ a {
 }
 
 .restaurants-carte__description {
-  display: inline-block;
+  position: relative;
   padding: 0.6rem 0.8rem;
   line-height: 1.5rem;
+}
+
+.restaurants-carte__description .heart {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.3rem;
+  -webkit-transform: translate(-50%, 70%);
+          transform: translate(-50%, 70%);
+  -webkit-text-stroke: 1px #555555;
+  color: transparent;
+}
+
+.restaurants-carte__description .heart:hover {
+  cursor: pointer;
+  -webkit-text-stroke: 1px transparent;
+  background: -webkit-linear-gradient(250deg, #9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
 }
 
 .restaurants-carte__heading {
