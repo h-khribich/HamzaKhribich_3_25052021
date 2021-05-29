@@ -126,8 +126,8 @@ a {
   background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
   border: none;
   border-radius: 1.7rem;
-  -webkit-box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.26);
-          box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.26);
+  -webkit-box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.158);
+          box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.158);
 }
 
 .btn a {
@@ -197,8 +197,8 @@ a {
       flex-wrap: nowrap;
   background-color: whitesmoke;
   border-radius: 20px;
-  -webkit-box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.26);
-          box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.26);
+  -webkit-box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.158);
+          box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.158);
 }
 
 .fonctionnement__carte i {
@@ -317,8 +317,8 @@ a {
   border-top-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
-  -webkit-box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.26);
-          box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.26);
+  -webkit-box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.158);
+          box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.158);
 }
 
 .restaurants-carte__nouveau {
@@ -395,8 +395,8 @@ a {
 
 .menu__wrapper {
   width: 100%;
-  -webkit-transform: translate(0, -40%);
-          transform: translate(0, -40%);
+  -webkit-transform: translate(0, -35%);
+          transform: translate(0, -35%);
   background-color: #f0f0f0;
   border-top-right-radius: 40px;
   border-top-left-radius: 40px;
@@ -418,7 +418,7 @@ a {
           align-items: center;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  padding: 2rem;
+  padding: 2rem 1.5rem;
 }
 
 .menu__header .heading {
@@ -427,6 +427,70 @@ a {
           justify-content: space-between;
   -webkit-box-shadow: none;
           box-shadow: none;
+}
+
+.menu__header .heart {
+  padding-right: 0.8rem;
+}
+
+.menu__title {
+  padding: 0 1.5rem 0.4rem;
+  position: relative;
+  z-index: 1;
+  font-weight: 300;
+  color: #555555;
+}
+
+.menu__title::before {
+  content: "";
+  position: absolute;
+  left: 1.5rem;
+  bottom: 0;
+  height: 1px;
+  width: 11%;
+  border-bottom: 3px solid #99E2D0;
+}
+
+.menu__description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0.7rem;
+  margin: 1rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  -webkit-box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.158);
+          box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.158);
+}
+
+.menu__description-item {
+  width: 100%;
+  display: block;
+  font-size: 1.1rem;
+  padding-bottom: 0.3rem;
+}
+
+.menu__description-byline {
+  color: #555555;
+  font-weight: 300;
+  font-size: 0.95rem;
+}
+
+.menu__description-prix {
+  padding: 0 0.8rem;
+  font-size: 0.9rem;
 }
 
 .menu .btn {

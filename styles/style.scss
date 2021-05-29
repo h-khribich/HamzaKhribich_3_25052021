@@ -44,7 +44,7 @@ $font-weight: (
 );
 
 $box-shadow: (
-    normal: 2px 3px 9px 1px rgba(128, 128, 128, 0.26),
+    normal: 2px 3px 9px 1px rgba(128, 128, 128, 0.158),
     hover: 2px 3px 9px 1px rgba(128, 128, 128, 0.623)
 );
 
@@ -306,7 +306,7 @@ a { text-decoration: none; }
 
     &__wrapper {
         width: 100%;
-        transform: translate(0, -40%);
+        transform: translate(0, -35%);
         background-color: $background-gray;
         border-top-right-radius: 40px;
         border-top-left-radius: 40px;
@@ -314,11 +314,58 @@ a { text-decoration: none; }
 
     &__header {
         @include flex(row, space-between, center, nowrap);
-        padding: 2rem;
+        padding: 2rem 1.5rem;
 
         .heading {
             justify-content: space-between;
             box-shadow: none;
+        }
+
+        .heart {
+            padding-right: 0.8rem;
+        }
+    }
+
+    &__title {
+        padding: 0 1.5rem 0.4rem;
+        position: relative;
+        z-index: 1;
+        font-weight: map-get($font-weight, light);
+        color: $font-gray;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 1.5rem; bottom: 0;
+            height: 1px;
+            width: 11%;
+            border-bottom: 3px solid $tertiary-color;
+        }
+    }
+
+    &__description {
+        @include flex(row, space-between, center, wrap);
+        padding: 0.7rem; margin: 1rem;
+        background-color: #fff;
+        border-radius: 1rem;
+        box-shadow: map-get($box-shadow, normal);
+
+        &-item {
+            width: 100%;
+            display: block;
+            font-size: 1.1rem;
+            padding-bottom: 0.3rem;
+        }
+
+        &-byline {
+            color: $font-gray;
+            font-weight: map-get($font-weight, light);
+            font-size: 0.95rem;
+        }
+
+        &-prix {
+            padding: 0 0.8rem;
+            font-size: 0.9rem;
         }
     }
 
