@@ -375,11 +375,6 @@ a {
 }
 
 /*-- PAGES MENU --*/
-/* Contrer l'offset de l'utilisation de 'translate' dans menu__wrapper*/
-.main-wrapper--page-resto {
-  background-color: #f0f0f0;
-}
-
 .resto {
   width: 100%;
   height: -webkit-fit-content;
@@ -396,16 +391,9 @@ a {
 
 .menu {
   width: 100%;
-  background-color: #f0f0f0;
-}
-
-.menu__wrapper {
-  width: 100%;
-  -webkit-transform: translate(0, -4rem);
-          transform: translate(0, -4rem);
-  background-color: #f0f0f0;
   border-top-right-radius: 40px;
   border-top-left-radius: 40px;
+  background-color: #f0f0f0;
 }
 
 .menu__header {
@@ -539,11 +527,28 @@ a {
           transform: translate(0, 15%);
 }
 
+.menu .btn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  padding: 2rem 0 4rem;
+}
+
 .menu .btn {
-  display: block;
   padding-left: 3rem;
   padding-right: 3rem;
-  margin: 1.5rem auto;
 }
 
 /*-- FOOTER --*/
@@ -622,6 +627,37 @@ a {
 }
 
 /*-- MEDIAS QUERIES --*/
+@media screen and (min-width: 1580px) {
+  body {
+    margin: auto 10%;
+  }
+}
+
+@media screen and (min-width: 1023px) {
+  .menu {
+    max-width: 1024px;
+    margin: 0 auto;
+    -webkit-box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.158);
+            box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.158);
+  }
+  .menu__header {
+    padding: 3rem 15%;
+  }
+  .menu__header .heading {
+    font-size: 2.5rem;
+  }
+  .menu__title {
+    text-align: center;
+  }
+  .menu__title::before {
+    left: 48%;
+  }
+  .menu__bloc {
+    padding: 2rem 0;
+    gap: 2rem;
+  }
+}
+
 @media screen and (min-width: 943px) {
   .restaurants-carte {
     margin: 0;

@@ -296,12 +296,6 @@ a { text-decoration: none; }
 
 /*-- PAGES MENU --*/
 
-
-/* Contrer l'offset de l'utilisation de 'translate' dans menu__wrapper*/
-.main-wrapper--page-resto {
-    background-color: $background-gray;
-}
-
 .resto {
     width: 100%; height: fit-content;
 
@@ -314,15 +308,9 @@ a { text-decoration: none; }
 
 .menu { 
     width: 100%;
+    border-top-right-radius: 40px;
+    border-top-left-radius: 40px;
     background-color: $background-gray;
-
-    &__wrapper {
-        width: 100%;
-        transform: translate(0, -4rem);
-        background-color: $background-gray;
-        border-top-right-radius: 40px;
-        border-top-left-radius: 40px;
-    }
 
     &__header {
         @include flex(row, space-between, center, nowrap);
@@ -398,11 +386,14 @@ a { text-decoration: none; }
         }
     }
 
+    .btn-container {
+        @include flex(row, center, center, nowrap);
+        padding: 2rem 0 4rem;
+    }
+
     .btn {
-        display: block;
         padding-left: 3rem;
-        padding-right: 3rem;  
-        margin: 1.5rem auto;
+        padding-right: 3rem; 
     }
 }
 
@@ -458,6 +449,43 @@ a { text-decoration: none; }
 }
 
 /*-- MEDIAS QUERIES --*/
+
+@media screen and (min-width: 1580px) {
+    body {
+        margin: auto 10%;
+    }
+}
+
+@media screen and (min-width: 1023px) {
+
+    .menu {
+        max-width: 1024px;
+        margin: 0 auto;
+        box-shadow: map-get($box-shadow, normal);
+
+        &__header { 
+            padding: 3rem 15%; 
+            
+            .heading {
+                font-size: 2.5rem;
+            }
+        }
+
+        &__title {
+            text-align: center;
+    
+            &::before {
+                left: 48%;
+            }
+        }
+    
+        &__bloc {
+            padding: 2rem 0;
+            gap: 2rem;
+        }
+    }
+    
+}
 
 @media screen and (min-width: 943px) {
     .restaurants-carte { margin: 0; }
