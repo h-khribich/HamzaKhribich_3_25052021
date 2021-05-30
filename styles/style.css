@@ -377,20 +377,22 @@ a {
 /*-- PAGES MENU --*/
 .resto {
   width: 100%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: 13.5rem;
+  position: relative;
 }
 
 .resto__img {
   width: 100%;
-  height: 17rem;
+  height: 16rem;
+  position: absolute;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
 .menu {
   width: 100%;
+  position: relative;
+  z-index: 1;
   border-top-right-radius: 40px;
   border-top-left-radius: 40px;
   background-color: #f0f0f0;
@@ -644,7 +646,7 @@ a {
     padding: 3rem 15%;
   }
   .menu__header .heading {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   .menu__title {
     text-align: center;
