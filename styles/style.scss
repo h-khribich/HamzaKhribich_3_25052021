@@ -296,6 +296,12 @@ a { text-decoration: none; }
 
 /*-- PAGES MENU --*/
 
+
+/* Contrer l'offset de l'utilisation de 'translate' dans menu__wrapper*/
+.main-wrapper--page-resto {
+    background-color: $background-gray;
+}
+
 .resto {
     width: 100%; height: fit-content;
 
@@ -306,8 +312,9 @@ a { text-decoration: none; }
     }
 }
 
-.menu {
+.menu { 
     width: 100%;
+    background-color: $background-gray;
 
     &__wrapper {
         width: 100%;
@@ -315,10 +322,6 @@ a { text-decoration: none; }
         background-color: $background-gray;
         border-top-right-radius: 40px;
         border-top-left-radius: 40px;
-
-        .btn {
-            margin-top: 3rem;
-        }
     }
 
     &__header {
@@ -336,10 +339,13 @@ a { text-decoration: none; }
     }
 
     &__bloc {
-        padding: 0.7rem 0;
+        @include flex(column, space-around, center, nowrap);
+        gap: 1rem;
+        padding: 0.7rem 0; 
     }
 
     &__title {
+        width: 100%;
         padding: 0 1.5rem 0.4rem;
         position: relative;
         z-index: 1;
@@ -351,44 +357,52 @@ a { text-decoration: none; }
             position: absolute;
             left: 1.5rem; bottom: 0;
             height: 1px;
-            width: 11%;
+            width: 2.5rem;
             border-bottom: 3px solid $tertiary-color;
         }
     }
 
     &__description {
         @include flex(row, space-between, center, wrap);
-        padding: 0.7rem; margin: 1rem;
+        padding: 0.7rem;
+        width: 92%; max-width: 510px;
         background-color: #fff;
         border-radius: 1rem;
         box-shadow: map-get($box-shadow, normal);
+
+        &:hover { 
+            box-shadow: map-get($box-shadow, hover);
+            transform: scale(1.01); 
+            @include transition();
+        }
 
         &-item {
             width: 100%;
             display: block;
             font-size: 1.1rem;
-            padding-bottom: 0.3rem;
             @include debordemment(90%);
         }
 
         &-byline {
+            padding-top: 0.4rem;
             color: $font-gray;
             font-weight: map-get($font-weight, light);
-            font-size: 0.95rem;
-            @include debordemment(80%);
+            font-size: 0.9rem;
+            @include debordemment(85%);
         }
 
         &-prix {
-            padding: 0 0.8rem;
+            padding: 0 0.4rem;
             font-size: 0.9rem;
+            transform: translate(0, 15%);
         }
     }
 
     .btn {
         display: block;
         padding-left: 3rem;
-        padding-right: 3rem;
-        margin: 0 auto;
+        padding-right: 3rem;  
+        margin: 1.5rem auto;
     }
 }
 
