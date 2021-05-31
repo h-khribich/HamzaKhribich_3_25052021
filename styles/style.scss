@@ -354,8 +354,7 @@ a { text-decoration: none; }
     }
 
     &__description {
-        @include flex(row, space-between, center, wrap);
-        padding: 0.7rem;
+        @include flex(row, space-between);
         width: 92%; max-width: 510px;
         background-color: #fff;
         border-radius: 1rem;
@@ -365,6 +364,18 @@ a { text-decoration: none; }
             box-shadow: map-get($box-shadow, hover);
             transform: scale(1.01); 
             @include transition();
+        }
+
+        &:hover > .menu__description-checkbox {
+            @include transition();
+            width: 15%;
+        }
+
+
+        &-container {
+            @include flex(row, space-between, baseline, wrap);
+            width: 100%;
+            padding: 0.7rem;
         }
 
         &-item {
@@ -385,8 +396,18 @@ a { text-decoration: none; }
         &-prix {
             padding: 0 0.4rem;
             font-size: 0.9rem;
-            transform: translate(0, 15%);
         }
+
+        &-checkbox {
+            width: 0; 
+            overflow: hidden;
+            background-color: $tertiary-color;
+
+            i { color: #fff; }
+        }
+
+        
+
     }
 
     .btn-container {
