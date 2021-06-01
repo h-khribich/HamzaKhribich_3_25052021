@@ -197,28 +197,39 @@ a { text-decoration: none; }
 
 /*- COMPONENT HEART -*/
 
-.heart {
-    -webkit-text-stroke: 1px $font-gray;
-    background: transparent;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    padding: 0.3rem;
+.heart__container {
+    width: 45px; height: 25px;
+    position: relative;
 
-    &:hover {
+    i {
+        position: absolute;
         cursor: pointer;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        padding: 0.3rem;
+
+        &:hover + .heart--full {
+            transform: scale(1.05);
+        }
+    }
+
+    .heart--empty {
+        position: absolute;
+        -webkit-text-stroke: 1px $font-gray;
+        background: transparent;
+    }
+    
+    .heart--full {
+        position: absolute;
         -webkit-text-stroke: 1px transparent;
         background: -webkit-linear-gradient(250deg, $primary-color, $secondary-color);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        animation: remplissage 0.5s ease-in-out;
+        transform: scale(0);
+        transition: 0.4s ease-out;
 
-        /*- Effet remplissage -*/
-
-        @keyframes remplissage {
-            from { opacity: 0; }
-          
-            to { opacity: 1; }
-        } 
+    /* Duplication de l'effet hover pour éviter l'interruption de l'animation lorsque heart--full grandit*/
+        &:hover { transform: scale(1.05); }
     }
 }
 
@@ -264,13 +275,13 @@ a { text-decoration: none; }
 
         &__description {
             position: relative;
-            padding: 0.6rem 0.8rem;
-            line-height: 1.5rem;
+            padding: 0.6rem 0.8rem 0.8rem;
+            line-height: 1.6rem;
 
-            .heart {
+            .heart__container {
                 position: absolute;
                 top: 0; right: 0;
-                transform: translate(-50%, 70%);
+                transform: translate(-15%, 55%);
             }
         }
 

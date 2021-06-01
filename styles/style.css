@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*-- VARIABLES --*/
 /*-- MIXINS --*/
 /*-- MAPS --*/
@@ -236,41 +237,47 @@ a {
 }
 
 /*- COMPONENT HEART -*/
-.heart {
-  -webkit-text-stroke: 1px #555555;
-  background: transparent;
+.heart__container {
+  width: 45px;
+  height: 25px;
+  position: relative;
+}
+
+.heart__container i {
+  position: absolute;
+  cursor: pointer;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   padding: 0.3rem;
 }
 
-.heart:hover {
-  cursor: pointer;
+.heart__container i:hover + .heart--full {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.heart__container .heart--empty {
+  position: absolute;
+  -webkit-text-stroke: 1px #555555;
+  background: transparent;
+}
+
+.heart__container .heart--full {
+  position: absolute;
   -webkit-text-stroke: 1px transparent;
   background: -webkit-linear-gradient(250deg, #9356DC, #FF79DA);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-animation: remplissage 0.5s ease-in-out;
-          animation: remplissage 0.5s ease-in-out;
-  /*- Effet remplissage -*/
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: 0.4s ease-out;
+  transition: 0.4s ease-out;
+  /* Duplication de l'effet hover pour éviter l'interruption de l'animation lorsque heart--full grandit*/
 }
 
-@-webkit-keyframes remplissage {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes remplissage {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.heart__container .heart--full:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 /*-- SECTION RESTAURANTS --*/
@@ -343,16 +350,16 @@ a {
 
 .restaurants-carte__description {
   position: relative;
-  padding: 0.6rem 0.8rem;
-  line-height: 1.5rem;
+  padding: 0.6rem 0.8rem 0.8rem;
+  line-height: 1.6rem;
 }
 
-.restaurants-carte__description .heart {
+.restaurants-carte__description .heart__container {
   position: absolute;
   top: 0;
   right: 0;
-  -webkit-transform: translate(-50%, 70%);
-          transform: translate(-50%, 70%);
+  -webkit-transform: translate(-15%, 55%);
+          transform: translate(-15%, 55%);
 }
 
 .restaurants-carte__heading {
