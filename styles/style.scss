@@ -328,11 +328,12 @@ a { text-decoration: none; }
 
     &__header {
         @include flex(row, space-between, center, nowrap);
-        padding: 2rem 1.5rem 1.5rem;
+        padding: 2rem 1.5rem 0.7rem;
 
         .heading {
             justify-content: space-between;
             box-shadow: none;
+            font-size: 1.7rem;
         }
 
         .heart {
@@ -343,7 +344,7 @@ a { text-decoration: none; }
     &__bloc {
         @include flex(column, space-around, center, nowrap);
         gap: 1rem;
-        padding: 0.7rem 0; 
+        padding: 1.3rem 0; 
     }
 
     &__title {
@@ -353,6 +354,7 @@ a { text-decoration: none; }
         z-index: 1;
         font-weight: map-get($font-weight, light);
         color: $font-gray;
+        text-transform: uppercase;
 
         &::before {
             content: "";

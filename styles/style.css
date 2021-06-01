@@ -421,7 +421,7 @@ a {
           align-items: center;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  padding: 2rem 1.5rem 1.5rem;
+  padding: 2rem 1.5rem 0.7rem;
 }
 
 .menu__header .heading {
@@ -430,6 +430,7 @@ a {
           justify-content: space-between;
   -webkit-box-shadow: none;
           box-shadow: none;
+  font-size: 1.7rem;
 }
 
 .menu__header .heart {
@@ -452,7 +453,7 @@ a {
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   gap: 1rem;
-  padding: 0.7rem 0;
+  padding: 1.3rem 0;
 }
 
 .menu__title {
@@ -462,6 +463,7 @@ a {
   z-index: 1;
   font-weight: 300;
   color: #555555;
+  text-transform: uppercase;
 }
 
 .menu__title::before {
