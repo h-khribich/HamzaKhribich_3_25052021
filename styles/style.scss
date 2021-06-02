@@ -73,7 +73,8 @@ a { text-decoration: none; }
     position: relative; z-index: 1;
     font-family: Shrikhand, cursive;
     display: flex; justify-content: center;
-    box-shadow: 2px 3px 3px rgba(128, 128, 128, 0.171);
+    box-shadow: map-get($box-shadow, normal);
+    background-color: #fff;
 
     &__img { 
         width: 45%; 
@@ -322,9 +323,10 @@ a { text-decoration: none; }
 
     &__img {
         width: 100%;
-        height: 16rem;
+        height: 18.7rem;
         position: absolute;
         object-fit: cover;
+        top: -3rem;
     }
 }
 
@@ -342,7 +344,9 @@ a { text-decoration: none; }
         .heading {
             justify-content: space-between;
             box-shadow: none;
+            background-color: $background-gray;
             font-size: 1.7rem;
+            letter-spacing: 1px;
         }
 
         .heart {
@@ -534,6 +538,19 @@ a { text-decoration: none; }
 }
 
 @media screen and (min-width: 1023px) {
+
+    .resto {
+        width: 80%;
+        margin: 0 auto;
+        @include flex(row, center, center, nowrap);
+        
+        &__img {
+            max-width: 1180px;
+            border-radius: 25rem;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    }
 
     .menu {
         box-shadow: map-get($box-shadow, normal);
