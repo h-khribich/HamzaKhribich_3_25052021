@@ -219,14 +219,6 @@ a {
           transform: translate(-50%);
 }
 
-.fonctionnement__carte--highlighted {
-  background-color: #f2eafb;
-}
-
-.fonctionnement__carte--highlighted i {
-  color: #9356DC;
-}
-
 .fonctionnement__carte:hover {
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
@@ -234,6 +226,11 @@ a {
           transform: scale(1.01);
   -webkit-box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.623);
           box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.623);
+  background-color: #f2eafb;
+}
+
+.fonctionnement__carte:hover i {
+  color: #9356DC;
 }
 
 /*- COMPONENT HEART -*/

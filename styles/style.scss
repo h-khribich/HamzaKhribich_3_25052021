@@ -181,16 +181,13 @@ a { text-decoration: none; }
             
         }
 
-        &--highlighted {
-            background-color: lighten($primary-color, 35%);
-
-            i { color: $primary-color; }
-        }
-
         &:hover {
             @include transition();
             transform: scale(1.01);
             box-shadow: map-get($box-shadow, hover);
+            background-color: lighten($primary-color, 35%);
+
+            i { color: $primary-color; }
         }
     }
 }
