@@ -353,7 +353,7 @@ a { text-decoration: none; }
     &__bloc {
         @include flex(column, space-around, center, nowrap);
         gap: 1rem;
-        padding: 1.3rem 0; 
+        padding: 1.3rem 0;
     }
 
     &__title {
@@ -382,6 +382,23 @@ a { text-decoration: none; }
         border-radius: 1rem;
         overflow: hidden;
         box-shadow: map-get($box-shadow, normal);
+        opacity: 0;
+        // Animation
+        animation: apparition 0.7s ease-in-out;
+        animation-fill-mode: forwards;
+
+        @keyframes apparition {
+            from { opacity: 0; }
+
+            to { opacity: 1; }
+        }
+
+        // Iteration sans avoir à modifier la propriété pour chaque enfant
+        @for $i from 1 through 10 {
+            &:nth-child(#{$i}n) {
+                animation-delay: #{$i * 0.25}s;
+            }
+        }
 
         &:hover { 
             box-shadow: map-get($box-shadow, hover);
