@@ -559,10 +559,11 @@ a { text-decoration: none; }
 
         .container-blocs {
             @include flex(row, center, center, wrap);
+            gap: 30px;
         }
 
         &__header { 
-            max-width: 800px;
+            max-width: 500px;
             padding: 3rem; 
             margin: 0 auto;
             
@@ -580,6 +581,8 @@ a { text-decoration: none; }
             padding: 2rem 0;
             gap: 2rem;
         }
+
+        &__description { width: 510px; }
     }
     
 }

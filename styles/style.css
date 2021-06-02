@@ -866,9 +866,10 @@ a {
             align-items: center;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    gap: 30px;
   }
   .menu__header {
-    max-width: 800px;
+    max-width: 500px;
     padding: 3rem;
     margin: 0 auto;
   }
@@ -884,6 +885,9 @@ a {
   .menu__bloc {
     padding: 2rem 0;
     gap: 2rem;
+  }
+  .menu__description {
+    width: 510px;
   }
 }
 
