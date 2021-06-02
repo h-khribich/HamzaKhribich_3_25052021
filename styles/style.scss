@@ -410,8 +410,13 @@ a { text-decoration: none; }
             @include transition();
         }
 
+        &:hover > .menu__description-container { 
+            width: 80%;
+            transition: 0.4s ease-in-out;
+        }
+
         &:hover > .menu__description-checkbox { 
-            width: 20%; 
+            width: 20%;
 
             i {
                 transform: rotate(1turn);
@@ -428,7 +433,7 @@ a { text-decoration: none; }
             width: 100%;
             display: block;
             font-size: 1.1rem;
-            @include debordemment(90%);
+            @include debordemment(95%);
         }
 
         &-byline {
@@ -440,7 +445,7 @@ a { text-decoration: none; }
         }
 
         &-prix {
-            padding: 0 0.4rem;
+            padding-right: 0 0.4rem;
             font-size: 0.9rem;
         }
 

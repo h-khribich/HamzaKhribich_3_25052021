@@ -618,6 +618,12 @@ a {
   transition: 0.2s ease-in-out;
 }
 
+.menu__description:hover > .menu__description-container {
+  width: 80%;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+
 .menu__description:hover > .menu__description-checkbox {
   width: 20%;
 }
@@ -651,7 +657,7 @@ a {
   width: 100%;
   display: block;
   font-size: 1.1rem;
-  max-width: 90%;
+  max-width: 95%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -669,7 +675,7 @@ a {
 }
 
 .menu__description-prix {
-  padding: 0 0.4rem;
+  padding-right: 0 0.4rem;
   font-size: 0.9rem;
 }
 
