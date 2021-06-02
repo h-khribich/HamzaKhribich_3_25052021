@@ -523,30 +523,38 @@ a { text-decoration: none; }
 @media screen and (min-width: 1580px) {
     body {
         margin: auto 10%;
+
+        .menu {
+            width: 80%;
+            margin: 0 auto;
+
+            .header { padding: 3rem 6rem; }
+        }
     }
 }
 
 @media screen and (min-width: 1023px) {
 
     .menu {
-        max-width: 1024px;
-        margin: 0 auto;
         box-shadow: map-get($box-shadow, normal);
 
+        .container-blocs {
+            @include flex(row, center, center, wrap);
+        }
+
         &__header { 
-            padding: 3rem 15%; 
+            max-width: 800px;
+            padding: 3rem; 
+            margin: 0 auto;
             
-            .heading {
-                font-size: 2rem;
-            }
+            .heading { font-size: 2rem; }
         }
 
         &__title {
             text-align: center;
     
-            &::before {
-                left: 48%;
-            }
+            // Centrer le soulignage 
+            &::before { left: 46%; }
         }
     
         &__bloc {

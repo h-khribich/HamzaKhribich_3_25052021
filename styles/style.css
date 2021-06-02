@@ -804,17 +804,41 @@ a {
   body {
     margin: auto 10%;
   }
+  body .menu {
+    width: 80%;
+    margin: 0 auto;
+  }
+  body .menu .header {
+    padding: 3rem 6rem;
+  }
 }
 
 @media screen and (min-width: 1023px) {
   .menu {
-    max-width: 1024px;
-    margin: 0 auto;
     -webkit-box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.158);
             box-shadow: 2px 3px 9px 1px rgba(128, 128, 128, 0.158);
   }
+  .menu .container-blocs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
   .menu__header {
-    padding: 3rem 15%;
+    max-width: 800px;
+    padding: 3rem;
+    margin: 0 auto;
   }
   .menu__header .heading {
     font-size: 2rem;
@@ -823,7 +847,7 @@ a {
     text-align: center;
   }
   .menu__title::before {
-    left: 48%;
+    left: 46%;
   }
   .menu__bloc {
     padding: 2rem 0;
