@@ -24,6 +24,204 @@ a {
   text-decoration: none;
 }
 
+/*-- LOADING ANIMATION --*/
+.loading-animation {
+  position: absolute;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  -webkit-animation: loading 3s ease-in-out forwards;
+          animation: loading 3s ease-in-out forwards;
+}
+
+@-webkit-keyframes loading {
+  from {
+    visibility: visible;
+  }
+  to {
+    visibility: hidden;
+  }
+}
+
+@keyframes loading {
+  from {
+    visibility: visible;
+  }
+  to {
+    visibility: hidden;
+  }
+}
+
+.loading-animation img {
+  padding: 2rem 0;
+  width: 45%;
+  opacity: 95%;
+  -webkit-animation: flickering 1.1s ease-in-out 10;
+          animation: flickering 1.1s ease-in-out 10;
+}
+
+@-webkit-keyframes flickering {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes flickering {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*-- COMPONENT LOADER --*/
+.ring {
+  -webkit-text-stroke: 1.5px #fff;
+  background: transparent;
+}
+
+.ring__container {
+  position: relative;
+  width: 50%;
+  margin: 0 auto;
+  height: 5rem;
+}
+
+.ring__small {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  -webkit-transform: translateY(125%);
+          transform: translateY(125%);
+  color: #99E2D0;
+  -webkit-animation: dynamic-gradient 1.3s ease-in-out 0.2s 5;
+          animation: dynamic-gradient 1.3s ease-in-out 0.2s 5;
+}
+
+@-webkit-keyframes dynamic-gradient {
+  0% {
+    color: #99E2D0;
+  }
+  50% {
+    color: #9356DC;
+  }
+  100% {
+    color: #99E2D0;
+  }
+}
+
+@keyframes dynamic-gradient {
+  0% {
+    color: #99E2D0;
+  }
+  50% {
+    color: #9356DC;
+  }
+  100% {
+    color: #99E2D0;
+  }
+}
+
+.ring__medium {
+  position: absolute;
+  padding: 8px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #FF79DA;
+  animation: spin-anticlockwise 1s linear 0.2s 10 reverse;
+}
+
+@-webkit-keyframes spin-anticlockwise {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-anticlockwise {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.ring__large {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #9356DC;
+  -webkit-animation: spin-clockwise 1s linear 0.2s 10;
+          animation: spin-clockwise 1s linear 0.2s 10;
+}
+
+@-webkit-keyframes spin-clockwise {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-clockwise {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 /*-- HEADER --*/
 .heading {
   width: 100%;
@@ -335,8 +533,9 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
