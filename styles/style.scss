@@ -635,8 +635,9 @@ a { text-decoration: none; }
 /*-- MEDIAS QUERIES --*/
 
 @media screen and (min-width: 1580px) {
-    body {
-        margin: auto 10%;
+    .main-wrapper {
+        padding: 0 15%;
+        margin: 0 auto;
 
         .menu {
             width: 80%;

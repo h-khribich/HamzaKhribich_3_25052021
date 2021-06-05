@@ -1011,14 +1011,15 @@ a {
 
 /*-- MEDIAS QUERIES --*/
 @media screen and (min-width: 1580px) {
-  body {
-    margin: auto 10%;
+  .main-wrapper {
+    padding: 0 15%;
+    margin: 0 auto;
   }
-  body .menu {
+  .main-wrapper .menu {
     width: 80%;
     margin: 0 auto;
   }
-  body .menu .header {
+  .main-wrapper .menu .header {
     padding: 3rem 6rem;
   }
 }
