@@ -26,7 +26,7 @@ a {
 
 /*-- LOADING ANIMATION --*/
 .loading-animation {
-  position: absolute;
+  position: fixed;
   z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
