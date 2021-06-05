@@ -253,6 +253,7 @@ a { text-decoration: none; }
     &:focus {
         @include transition();
         transform: scale(1.01);
+        cursor: pointer;
         box-shadow: map-get($box-shadow, hover);
         opacity: 0.9;
     }
@@ -549,7 +550,7 @@ a { text-decoration: none; }
         }
 
         &-prix {
-            padding-right: 0 0.4rem;
+            padding-right: 0.4rem;
             font-size: 0.9rem;
         }
 
