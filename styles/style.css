@@ -1012,7 +1012,7 @@ a {
 /*-- MEDIAS QUERIES --*/
 @media screen and (min-width: 1580px) {
   .main-wrapper {
-    padding: 0 15%;
+    padding: 0 10%;
     margin: 0 auto;
   }
   .main-wrapper .menu {
